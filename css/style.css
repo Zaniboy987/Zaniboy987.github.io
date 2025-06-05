@@ -17,12 +17,17 @@ header {
 
 .navbar-container {
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap; /* ✅ Prevent wrapping to new line */
+  gap: 10px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .nav-tab {
-  flex: 1 1 150px; /* Equal box size */
+  flex: none; /* ✅ Make all tabs fixed size */
+  width: 150px; /* ✅ Consistent size for all */
   text-align: center;
   padding: 15px;
   background-color: #f1f1f1;
@@ -34,9 +39,8 @@ header {
   border: 2px solid transparent;
   box-sizing: border-box;
   transition: all 0.3s ease;
-  min-width: 120px;
-  max-width: 180px;
 }
+
 
 .nav-tab:hover,
 .nav-tab:focus {
@@ -88,4 +92,10 @@ section {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.nav-tab.active {
+  background-color: #007acc;
+  color: white;
+  border-color: #005fa3;
 }
