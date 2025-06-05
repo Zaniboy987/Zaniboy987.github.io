@@ -19,28 +19,34 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: nowrap; /* ✅ Prevent wrapping to new line */
-  gap: 10px;
-  max-width: 1000px;
-  margin: 0 auto;
+  gap: 12px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 0 10px;
 }
 
 .nav-tab {
-  flex: none; /* ✅ Make all tabs fixed size */
-  width: 150px; /* ✅ Consistent size for all */
+  width: 160px;
+  min-width: 160px;
   text-align: center;
-  padding: 15px;
+  padding: 12px 0;
   background-color: #f1f1f1;
   border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.1em;
+  font-size: 1.05em;
   color: #333;
   border: 2px solid transparent;
-  box-sizing: border-box;
   transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
+.nav-tab.active {
+  background-color: #007acc;
+  color: white;
+  border-color: #005fa3;
+}
 
 .nav-tab:hover,
 .nav-tab:focus {
@@ -94,8 +100,9 @@ section {
   }
 }
 
-.nav-tab.active {
-  background-color: #007acc;
-  color: white;
-  border-color: #005fa3;
+@media screen and (max-width: 600px) {
+  .nav-tab {
+    font-size: 0.95em;
+    width: 130px;
+  }
 }
