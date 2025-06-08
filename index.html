@@ -2,30 +2,62 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Home - My Portfolio</title>
+  <title>Home - Azan Nazar</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- Navigation bar -->
-  <header>
-    <nav class="navbar">
-      <div class="navbar-container">
-        <a href="index.html" class="nav-tab">🏠 Home</a>
-        <a href="skills.html" class="nav-tab">🛠 Skills</a>
-        <a href="projects.html" class="nav-tab">💻 Projects</a>
-         <a href="contact.html" class="nav-tab active">📬 Contact</a>
-        <a href="resume.html" class="nav-tab">📄 Resume</a>
+  <!-- Navigation Bar in Light Blue Section -->
+  <div class="hero-top">
+    <header>
+      <nav class="navbar">
+        <div class="navbar-container">
+          <a href="index.html" class="nav-tab active">🏠 Home</a>
+          <a href="projects.html" class="nav-tab">💻 Projects</a>
+          <a href="skills.html" class="nav-tab">🛠 Skills</a>
+          <a href="contact.html" class="nav-tab">📬 Contact</a>
+          <a href="resume.html" class="nav-tab">📄 Resume</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section: Photo + Bio -->
+    <section class="hero-section fade-in">
+      <img src="images/Photo.jpg" alt="Azan Photo" class="hero-photo slide-up delay-1">
+      <div class="hero-text slide-up delay-2">
+        <p>
+          Recent Binghamton University '25 graduate with an MS (AI Track) and BS in Computer Science with ambitions towards fields within artificial intelligence, machine learning, software engineering, and tech consulting. I'm eager to showcase my academic and project experience from these fields in crafting innovative solutions for practical and pertinent challenges.
+        </p>
       </div>
-    </nav>
-  </header>
+    </section>
+  </div>
 
-  <!-- Home Section -->
-<section class="fade-in delay-1" style="text-align: center; padding-top: 80px;">
-  <h1 class="slide-up delay-1">Hello, I'm Azan</h1>
-  <p class="slide-up delay-2">I'm a software developer with a passion for AI, robotics, and building cool projects.</p>
-</section>
+  <!-- Skillset Section -->
+  <section class="fade-in skillset-section">
+    <img src="images/Bing.jpg" alt="Binghamton" class="section-img slide-up delay-1">
+    <div class="section-text slide-up delay-2">
+      <p>
+        Throughout highschool and college, I've honed in my knowledge of computer science, expertise in coding, understanding of core software engineering principle, pragmatic application of machine learning and artificial intelligence in addition to advancing smart health outcomes within a research purview. Nearing 8 years of experience within computer science, I've become adept in a vast variety of programming languages such as Python, C and Java to name a few, forever shifting the way I interacted and viewed the world.
+      </p>
+      <a href="skills.html" class="arrow-link">→ Go to Skills</a>
+    </div>
+  </section>
 
+  <!-- Experience Section -->
+  <section class="fade-in experience-section">
+    <img src="images/Gesture.png" alt="Gesture Research" class="section-img slide-up delay-1">
+    <div class="section-text slide-up delay-2">
+      <p>
+        On my computer science voyage, my most impactful mission has been co-authoring a scientific survey culminating and analyzing the advancements of gesture recognition technology in recent years in different contexts like gesture classification, sequence modeling and generative motion synthesis with current research contributions intended to be submitted to the CHI 2025 Yokohama, Japan ACM conference. This only captures the top of the iceberg with my expertise defined by many more projects.
+      </p>
+      <a href="projects.html" class="arrow-link">→ Explore Projects</a>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="fade-in contact-cta slide-up delay-2">
+    <a href="contact.html" class="arrow-link">→ Go to Contact Links</a>
+  </section>
 
 </body>
 </html>

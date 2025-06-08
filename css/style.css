@@ -106,3 +106,101 @@ section {
     width: 130px;
   }
 }
+
+/* Top Light Blue Hero Background */
+.hero-top {
+  background-color: #ADD8E6;
+  padding-bottom: 40px;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.hero-photo {
+  width: 250px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 600px;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* Section Styles (Skills/Experience) */
+.skillset-section,
+.experience-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.section-img {
+  width: 70%;
+  max-width: 700px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.section-text {
+  flex: 1;
+  max-width: 400px;
+  font-size: 1.05em;
+  line-height: 1.6;
+}
+
+/* Arrow Button Style */
+.arrow-link {
+  display: inline-block;
+  margin-top: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #007acc;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.arrow-link:hover {
+  border-bottom: 2px solid #007acc;
+}
+
+/* Contact CTA */
+.contact-cta {
+  text-align: center;
+  margin: 60px 0;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .hero-section,
+  .skillset-section,
+  .experience-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .section-img {
+    width: 100%;
+  }
+
+  .section-text {
+    max-width: 90%;
+  }
+}
