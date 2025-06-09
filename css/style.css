@@ -219,18 +219,21 @@ section {
   margin-bottom: 10px;
 }
 
-.footer-icons {
+.footer-icons-img {
   display: flex;
   justify-content: center;
   gap: 25px;
-  font-size: 1.8rem;
+  align-items: center;
+  margin-top: 10px;
 }
 
-.footer-icons a {
-  color: #007acc;
-  transition: color 0.3s ease;
+.footer-icons-img img {
+  width: 36px;
+  height: 36px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.footer-icons a:hover {
-  color: #005fa3;
+.footer-icons-img a:hover img {
+  transform: scale(1.2);
+  opacity: 0.8;
 }
