@@ -204,3 +204,33 @@ section {
     max-width: 90%;
   }
 }
+
+/* Footer Styles */
+.footer {
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  border-top: 1px solid #ccc;
+}
+
+.footer p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  font-size: 1.8rem;
+}
+
+.footer-icons a {
+  color: #007acc;
+  transition: color 0.3s ease;
+}
+
+.footer-icons a:hover {
+  color: #005fa3;
+}
