@@ -1,51 +1,62 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Azan Nazar - Personal Website</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>About Me</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <div class="header-container">
-      <h1 class="site-title">Personal Website</h1>
-      <nav class="navbar">
-        <div class="navbar-container">
-          <button class="nav-tab active" onclick="location.href='index.html'">Home</button>
-          <button class="nav-tab" onclick="location.href='projects.html'">Projects</button>
-          <button class="nav-tab" onclick="location.href='resume.html'">Resume</button>
-        </div>
-      </nav>
-    </div>
-  </header>
 
-  <main>
-    <section class="slide fade-in">
-      <img src="assets/slide1.png" alt="Slide 1" />
-    </section>
-    <section class="slide fade-in">
-      <img src="assets/slide2.png" alt="Slide 2" />
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-icons">
-      <div class="footer-item">
-        <img src="assets/linkedin.png" alt="LinkedIn">
-        <a href="https://www.linkedin.com/in/yourprofile"><span>LinkedIn</span></a>
-      </div>
-      <div class="footer-item">
-        <img src="assets/github.png" alt="GitHub">
-        <a href="https://github.com/yourprofile"><span>GitHub</span></a>
-      </div>
-      <div class="footer-item">
-        <img src="assets/gmail.png" alt="Gmail">
-        <a href="mailto:yourname@gmail.com"><span>Gmail</span></a>
-      </div>
+<header>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <button class="nav-tab active">About Me</button>
+      <button class="nav-tab" onclick="location.href='projects.html'">Projects</button>
+      <button class="nav-tab" onclick="location.href='resume.html'">Resume</button>
     </div>
-    <p>&copy; Made by Azan Nazar</p>
-  </footer>
+  </nav>
+</header>
+
+<div id="slides" class="fade-in">
+  <section class="slide"><img src="assets/about_1.png"></section>
+  <section class="slide"><img src="assets/about_2.png"></section>
+  <section class="slide"><img src="assets/about_3.png"></section>
+  <section class="slide"><img src="assets/about_4.png"></section>
+</div>
+
+<footer class="footer fade-in">
+  <div class="footer-icons">
+    <div class="footer-item">
+      <a href="https://linkedin.com/in/azan-nazar" target="_blank"><img src="images/linkedin.png"></a>
+      <span>LinkedIn</span>
+    </div>
+    <div class="footer-item">
+      <a href="https://github.com/Zaniboy987" target="_blank"><img src="images/github.png"></a>
+      <span>GitHub</span>
+    </div>
+    <div class="footer-item">
+      <a href="mailto:nazarazan13@gmail.com"><img src="images/gmail.png"></a>
+      <span>Gmail</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // fade-in on load
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.fade-in').forEach(el => {
+      el.style.animationDelay = '0.3s';
+      el.classList.add('fade-in');
+    });
+    window.scrollTo(0, 0);
+  });
+  // header hide/show
+  let lastY = 0, header = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('hidden', window.scrollY > 100);
+  });
+  header.addEventListener('mouseenter', () => header.classList.remove('hidden'));
+</script>
+
 </body>
 </html>
