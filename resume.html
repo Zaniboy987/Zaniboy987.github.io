@@ -2,73 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Resume - Azan Nazar</title>
+  <title>Resume</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-
-<script>
-// Scroll to top on refresh
-window.onbeforeunload = () => window.scrollTo(0, 0);
-
-// Hide nav on scroll down, show on scroll up
-let lastScrollY = window.scrollY;
-const header = document.querySelector("header");
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > lastScrollY && window.scrollY > 100) {
-    header.style.transform = "translateY(-100%)";
-  } else {
-    header.style.transform = "translateY(0)";
-  }
-  lastScrollY = window.scrollY;
-});
-</script>
-
-
 <body>
 
-  <!-- Navigation bar -->
-  <header>
-    <nav class="navbar">
-      <div class="navbar-container">
-          <a href="index.html" class="nav-tab">About Me</a>
-          <a href="projects.html" class="nav-tab">Projects</a>
-          <a href="resume.html" class="nav-tab active">Resume</a>
-      </div>
-    </nav>
-  </header>
-
-  <section class="resume-container fade-in">
-    <h1>Resume</h1>
-    <p>Click below to view or download my full resume.</p>
-
-    <div class="resume-actions slide-up">
-      <a href="assets/Azan_Nazar_CS_Masters_Resume.pdf" class="btn" download>⬇ Download Resume</a>
-      <a href="assets/Azan_Nazar_CS_Masters_Resume.pdf" target="_blank" class="btn-outline">👁 View in Browser</a>
+<header>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <button class="nav-tab" onclick="location.href='index.html'">About Me</button>
+      <button class="nav-tab" onclick="location.href='projects.html'">Projects</button>
+      <button class="nav-tab active">Resume</button>
     </div>
+  </nav>
+</header>
 
-    <iframe src="assets/Azan_Nazar_CS_Masters_Resume.pdf" width="100%" height="600px" class="fade-in" style="margin-top: 20px; border: 1px solid #ccc;"></iframe>
-  </section>
+<div class="resume-container fade-in">
+  <h1>Resume</h1>
+  <a href="assets/Azan_Nazar_CS_Masters_Resume.pdf" class="btn" download>Download</a>
+  <a href="assets/Azan_Nazar_CS_Masters_Resume.pdf" class="btn" target="_blank">View</a>
+  <iframe src="assets/Azan_Nazar_CS_Masters_Resume.pdf" width="100%" height="600px"
+    style="border:2px solid #000; margin-top:20px; border-radius:8px;"></iframe>
+</div>
 
-  <!-- Footer with image icons -->
-  <footer class="footer fade-in delay-5">
-    <p>Connect with me:</p>
-    <div class="footer-icons-img">
-      <a href="https://www.linkedin.com/in/azan-nazar/" target="_blank" title="LinkedIn">
-        <img src="images/linkedin.png" alt="LinkedIn" />
-        LinkedIn
-      </a>
-      <a href="https://github.com/Zaniboy987" target="_blank" title="GitHub">
-        <img src="images/github.png" alt="GitHub" />
-        GitHub
-      </a>
-      <a href="mailto:nazarazan13@gmail.com" title="Gmail">
-        <img src="images/gmail.png" alt="Gmail" />
-        Gmail
-      </a>
+<footer class="footer fade-in">
+  <div class="footer-icons">
+    <div class="footer-item">
+      <a href="https://linkedin.com/in/azan-nazar" target="_blank"><img src="images/linkedin.png"></a>
+      <span>LinkedIn</span>
     </div>
-  </footer>
+    <div class="footer-item">
+      <a href="https://github.com/Zaniboy987" target="_blank"><img src="images/github.png"></a>
+      <span>GitHub</span>
+    </div>
+    <div class="footer-item">
+      <a href="mailto:nazarazan13@gmail.com"><img src="images/gmail.png"></a>
+      <span>Gmail</span>
+    </div>
+  </div>
+</footer>
 
+<script>
+  window.addEventListener('DOMContentLoaded', () => window.scrollTo(0,0));
+  let header = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('hidden', window.scrollY > 100);
+  });
+  header.addEventListener('mouseenter', () => header.classList.remove('hidden'));
+</script>
 
 </body>
 </html>

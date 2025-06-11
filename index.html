@@ -2,93 +2,61 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>About Me - Azan Nazar</title>
+  <title>About Me</title>
   <link rel="stylesheet" href="css/style.css">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-
-<script>
-// Scroll to top on refresh
-window.onbeforeunload = () => window.scrollTo(0, 0);
-
-// Hide nav on scroll down, show on scroll up
-let lastScrollY = window.scrollY;
-const header = document.querySelector("header");
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > lastScrollY && window.scrollY > 100) {
-    header.style.transform = "translateY(-100%)";
-  } else {
-    header.style.transform = "translateY(0)";
-  }
-  lastScrollY = window.scrollY;
-});
-</script>
-
-
 <body>
 
-  <!-- Navigation Bar -->
-  <header>
-    <nav class="navbar">
-      <div class="navbar-container">
-        <a href="index.html" class="nav-tab active">About Me</a>
-        <a href="projects.html" class="nav-tab">Projects</a>
-        <a href="resume.html" class="nav-tab">Resume</a>
-      </div>
-    </nav>
-  </header>
-
-  <!-- Slides (regular size with spacing and fade-in) -->
-  <section class="slide fade-in delay-1">
-    <img src="assets/about_1.png" alt="Slide 1">
-  </section>
-
-  <section class="slide fade-in delay-2">
-    <img src="assets/about_2.png" alt="Slide 2">
-  </section>
-
-  <section class="slide fade-in delay-3">
-    <img src="assets/about_3.png" alt="Slide 3">
-  </section>
-
-  <section class="slide fade-in delay-4">
-    <img src="assets/about_4.png" alt="Slide 4">
-  </section>
-
-  <footer class="footer fade-in delay-5">
-    <p>Connect with me:</p>
-    <div class="footer-icons-img">
-      <a href="https://www.linkedin.com/in/azan-nazar/" target="_blank" title="LinkedIn">
-        <img src="images/linkedin.png" alt="LinkedIn" />
-        LinkedIn
-      </a>
-      <a href="https://github.com/Zaniboy987" target="_blank" title="GitHub">
-        <img src="images/github.png" alt="GitHub" />
-        GitHub
-      </a>
-      <a href="mailto:nazarazan13@gmail.com" title="Gmail">
-        <img src="images/gmail.png" alt="Gmail" />
-        Gmail
-      </a>
+<header>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <button class="nav-tab active">About Me</button>
+      <button class="nav-tab" onclick="location.href='projects.html'">Projects</button>
+      <button class="nav-tab" onclick="location.href='resume.html'">Resume</button>
     </div>
-  </footer>
+  </nav>
+</header>
 
-  <!-- Scroll-triggered fade-in script -->
-  <script>
-    const faders = document.querySelectorAll('.fade-in');
+<div id="slides" class="fade-in">
+  <section class="slide"><img src="assets/about_1.png"></section>
+  <section class="slide"><img src="assets/about_2.png"></section>
+  <section class="slide"><img src="assets/about_3.png"></section>
+  <section class="slide"><img src="assets/about_4.png"></section>
+</div>
 
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
+<footer class="footer fade-in">
+  <div class="footer-icons">
+    <div class="footer-item">
+      <a href="https://linkedin.com/in/azan-nazar" target="_blank"><img src="images/linkedin.png"></a>
+      <span>LinkedIn</span>
+    </div>
+    <div class="footer-item">
+      <a href="https://github.com/Zaniboy987" target="_blank"><img src="images/github.png"></a>
+      <span>GitHub</span>
+    </div>
+    <div class="footer-item">
+      <a href="mailto:nazarazan13@gmail.com"><img src="images/gmail.png"></a>
+      <span>Gmail</span>
+    </div>
+  </div>
+</footer>
 
-    faders.forEach(el => observer.observe(el));
-  </script>
+<script>
+  // fade-in on load
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.fade-in').forEach(el => {
+      el.style.animationDelay = '0.3s';
+      el.classList.add('fade-in');
+    });
+    window.scrollTo(0, 0);
+  });
+  // header hide/show
+  let lastY = 0, header = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('hidden', window.scrollY > 100);
+  });
+  header.addEventListener('mouseenter', () => header.classList.remove('hidden'));
+</script>
 
 </body>
 </html>

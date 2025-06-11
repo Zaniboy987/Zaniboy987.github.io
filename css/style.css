@@ -3,190 +3,124 @@ body {
   background: url('../assets/background.png') no-repeat center center fixed;
   background-size: cover;
   margin: 0;
+  padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #ffffff;
+  color: #fff;
+  scroll-behavior: smooth;
 }
 
-/* ==== HEADER ==== */
+/* Ensure scroll to top on refresh */
+html { scroll-behavior: auto; }
+
+/* ==== HEADER (auto-hide) ==== */
 header {
   background-color: #191970;
-  color: #ffffff;
-  position: sticky;
+  color: #fff;
+  position: fixed;
+  width: 100%;
   top: 0;
   z-index: 999;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
 }
+header.hidden { transform: translateY(-100%); }
 
-.navbar {
-  display: flex;
-  justify-content: center;
-  padding: 16px 0;
-}
-
-.navbar-container {
-  display: flex;
-  gap: 24px;
-}
-
+.navbar { display: flex; justify-content: center; padding: 16px 0; }
+.navbar-container { display: flex; gap: 32px; }
 .nav-tab {
-  background: none;
-  border: none;
-  font-size: 1.1em;
-  font-weight: 600;
-  color: #ffffff;
-  text-decoration: underline;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  background: none; border: none;
+  font-size: 1.1em; font-weight: 600;
+  color: #fff; text-decoration: underline; cursor: pointer;
+  transition: color 0.3s ease;
 }
-
-.nav-tab:hover,
-.nav-tab:focus {
-  color: #87CEFA;
-}
-
-.nav-tab.active {
-  text-decoration: underline 2px solid #87CEFA;
-}
+.nav-tab:hover, .nav-tab:focus { color: #87CEFA; }
+.nav-tab.active { text-decoration: underline 2px solid #87CEFA; }
 
 /* ==== SLIDES ==== */
 .slide {
-  max-width: 900px;
-  margin: 60px auto;
-  text-align: center;
-  background-color: rgba(25, 25, 112, 0.6);
-  padding: 20px;
-  border-radius: 10px;
-  backdrop-filter: blur(5px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: 1100px;
+  max-width: 95%;
+  margin: 100px auto; /* so header doesn't cover */
 }
-
 .slide img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
+  width: 100%; display: block; border: none;
+  border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-/* ==== ANIMATIONS ==== */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s ease, transform 1s ease;
+/* ==== PROJECTS CAROUSEL ==== */
+.carousel-container {
+  position: relative;
+  width: 900px; max-width: 95%;
+  margin: 120px auto 60px;
+  background: #fff;
+  border: 8px solid #000;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
 }
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
+.carousel-container img {
+  width: 100%; max-height: 500px;
 }
+.carousel-arrow {
+  position: absolute; top: 50%;
+  font-size: 2rem; color: rgba(0,0,0,0.7);
+  background: rgba(255,255,255,0.8);
+  border-radius: 50%; width: 40px; height: 40px;
+  line-height: 40px; cursor: pointer;
+  user-select: none;
+  transform: translateY(-50%);
+}
+.carousel-arrow.left { left: 10px; }
+.carousel-arrow.right { right: 10px; }
 
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.2s; }
-.delay-3 { transition-delay: 0.3s; }
-.delay-4 { transition-delay: 0.4s; }
-.delay-5 { transition-delay: 0.5s; }
+/* ==== RESUME BUTTONS ==== */
+.resume-container {
+  max-width: 900px; margin: 120px auto; padding: 20px;
+}
+.btn {
+  display: inline-block; padding: 12px 24px;
+  margin: 10px;
+  font-size: 1em; font-weight: 600;
+  color: #fff; background: #007acc;
+  border: none; border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+.btn:hover { background: #005fa3; }
 
 /* ==== FOOTER ==== */
 .footer {
-  background-color: #191970;
-  color: #ffffff;
-  text-align: center;
-  padding: 30px 0;
+  background: #191970;
+  color: #fff;
+  padding: 40px 20px;
   border-top: 2px solid #87CEFA;
-}
-
-.footer p {
-  font-weight: 600;
-  font-size: 1.1em;
-  text-decoration: underline;
-}
-
-.footer-icons-img {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+  display: flex; flex-direction: column;
   align-items: center;
-  margin-top: 10px;
 }
-
-.footer-icons-img img {
-  width: 26px;
-  height: 26px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+.footer-icons {
+  display: flex; align-items: center;
+  gap: 40px; margin-top: 16px;
+}
+.footer-item {
+  display: flex; align-items: center; gap: 12px;
+}
+.footer-item img {
+  width: 32px; height: 32px;
   filter: grayscale(40%);
+  transition: filter 0.3s ease, transform 0.3s ease;
 }
-
-.footer-icons-img a:hover img {
-  transform: scale(1.1);
-  opacity: 0.85;
-  filter: grayscale(0%);
+.footer-item a:hover img {
+  filter: grayscale(0); transform: scale(1.1);
 }
+.footer-item span { font-weight: 600; font-size: 1em; text-decoration: underline; }
 
-/* ==== Responsive ==== */
-@media screen and (max-width: 600px) {
-  .nav-tab {
-    font-size: 0.95em;
-    padding: 6px 12px;
-  }
-
-  .slide {
-    margin: 40px 16px;
-  }
+/* ==== ANIMATIONS ==== */
+.fade-in {
+  opacity: 0; transform: translateY(20px);
+  animation: fadeIn 1s ease forwards;
 }
+@keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
 
-/* === Slide Improvements for index.html === */
-.slide {
-  max-width: 1100px;
-  margin: 60px auto;
-  text-align: center;
-  padding: 0;
-  background: none;
-  box-shadow: none;
-}
-
-.slide img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* === Updated Footer with Labels === */
-.footer-icons-img {
-  display: flex;
-  justify-content: center;
-  gap: 60px;
-  align-items: center;
-  margin-top: 20px;
-  flex-wrap: wrap;
-}
-
-.footer-icons-img a {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: #ffffff;
-  font-weight: 500;
-  text-decoration: none;
-  font-size: 1.1em;
-  transition: color 0.3s ease;
-}
-
-.footer-icons-img a img {
-  width: 36px;
-  height: 36px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  filter: grayscale(40%);
-}
-
-.footer-icons-img a:hover img {
-  transform: scale(1.15);
-  opacity: 0.85;
-  filter: grayscale(0%);
-}
-
-.footer-icons-img a:hover {
-  color: #87CEFA;
-}
-
-/* === Sticky Header Auto-Hide === */
-header {
-  transition: transform 0.4s ease;
+/* ==== RESPONSIVE ==== */
+@media (max-width: 768px) {
+  .slide, .carousel-container { margin: 100px 10px; }
 }
