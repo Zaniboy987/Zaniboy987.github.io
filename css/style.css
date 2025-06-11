@@ -37,7 +37,7 @@ header.hidden { transform: translateY(-100%); }
 
 /* ==== SLIDES ==== */
 .slide {
-  width: 1100px;
+  width: 1000;
   max-width: 95%;
   margin: 100px auto; /* so header doesn't cover */
 }
@@ -111,7 +111,7 @@ header.hidden { transform: translateY(-100%); }
 .footer-item a:hover img {
   filter: grayscale(0); transform: scale(1.1);
 }
-.footer-item span { font-weight: 600; font-size: 1em; text-decoration: underline; }
+.footer-item span { font-weight: 600; font-size: 1em;}
 
 /* ==== ANIMATIONS ==== */
 .fade-in {
