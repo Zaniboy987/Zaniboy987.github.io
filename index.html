@@ -6,26 +6,6 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-
-<!-- JavaScript-->
- <script>
-  const faders = document.querySelectorAll('.fade-in');
-
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        obs.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.1
-  });
-
-  faders.forEach(el => observer.observe(el));
-</script>
-
-
 <body>
 
   <!-- Navigation Bar -->
@@ -39,20 +19,20 @@
     </nav>
   </header>
 
-  <!-- Fullscreen Slides -->
-  <section class="slide fade-in delay-1">
+  <!-- Slide Sections (normal sized with fade-ins) -->
+  <section class="content-slide fade-in delay-1">
     <img src="assets/about_1.png" alt="Slide 1">
   </section>
 
-  <section class="slide fade-in delay-2">
+  <section class="content-slide fade-in delay-2">
     <img src="assets/about_2.png" alt="Slide 2">
   </section>
 
-  <section class="slide fade-in delay-3">
+  <section class="content-slide fade-in delay-3">
     <img src="assets/about_3.png" alt="Slide 3">
   </section>
 
-  <section class="slide fade-in delay-4">
+  <section class="content-slide fade-in delay-4">
     <img src="assets/about_4.png" alt="Slide 4">
   </section>
 
@@ -71,6 +51,23 @@
       </a>
     </div>
   </footer>
+
+  <!-- Fade-in on scroll -->
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    faders.forEach(el => observer.observe(el));
+  </script>
 
 </body>
 </html>
