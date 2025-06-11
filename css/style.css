@@ -131,3 +131,62 @@ header {
     margin: 40px 16px;
   }
 }
+
+/* === Slide Improvements for index.html === */
+.slide {
+  max-width: 1100px;
+  margin: 60px auto;
+  text-align: center;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* === Updated Footer with Labels === */
+.footer-icons-img {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  align-items: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-icons-img a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #ffffff;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+}
+
+.footer-icons-img a img {
+  width: 36px;
+  height: 36px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  filter: grayscale(40%);
+}
+
+.footer-icons-img a:hover img {
+  transform: scale(1.15);
+  opacity: 0.85;
+  filter: grayscale(0%);
+}
+
+.footer-icons-img a:hover {
+  color: #87CEFA;
+}
+
+/* === Sticky Header Auto-Hide === */
+header {
+  transition: transform 0.4s ease;
+}

@@ -5,6 +5,26 @@
   <title>Resume - Azan Nazar</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
+<script>
+// Scroll to top on refresh
+window.onbeforeunload = () => window.scrollTo(0, 0);
+
+// Hide nav on scroll down, show on scroll up
+let lastScrollY = window.scrollY;
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > lastScrollY && window.scrollY > 100) {
+    header.style.transform = "translateY(-100%)";
+  } else {
+    header.style.transform = "translateY(0)";
+  }
+  lastScrollY = window.scrollY;
+});
+</script>
+
+
 <body>
 
   <!-- Navigation bar -->
@@ -31,20 +51,24 @@
   </section>
 
   <!-- Footer with image icons -->
-  <footer class="footer fade-in slide-up delay-2">
+  <footer class="footer fade-in delay-5">
     <p>Connect with me:</p>
     <div class="footer-icons-img">
       <a href="https://www.linkedin.com/in/azan-nazar/" target="_blank" title="LinkedIn">
         <img src="images/linkedin.png" alt="LinkedIn" />
+        LinkedIn
       </a>
       <a href="https://github.com/Zaniboy987" target="_blank" title="GitHub">
         <img src="images/github.png" alt="GitHub" />
+        GitHub
       </a>
       <a href="mailto:nazarazan13@gmail.com" title="Gmail">
         <img src="images/gmail.png" alt="Gmail" />
+        Gmail
       </a>
     </div>
   </footer>
+
 
 </body>
 </html>
