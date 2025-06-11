@@ -93,25 +93,51 @@ header.hidden { transform: translateY(-100%); }
   color: #fff;
   padding: 40px 20px;
   border-top: 2px solid #87CEFA;
-  display: flex; flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
 }
+
 .footer-icons {
-  display: flex; align-items: center;
-  gap: 40px; margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-top: 16px;
 }
+
 .footer-item {
-  display: flex; align-items: center; gap: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
+
 .footer-item img {
-  width: 32px; height: 32px;
+  width: 32px;
+  height: 32px;
   filter: grayscale(40%);
   transition: filter 0.3s ease, transform 0.3s ease;
 }
+
 .footer-item a:hover img {
-  filter: grayscale(0); transform: scale(1.1);
+  filter: grayscale(0);
+  transform: scale(1.1);
 }
-.footer-item span { font-weight: 600; font-size: 1em;}
+
+.footer-item span {
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.footer-trademark {
+  margin-left: auto;
+  font-size: 0.9em;
+  font-style: italic;
+  opacity: 0.75;
+  padding-right: 20px;
+  white-space: nowrap;
+}
+
 
 /* ==== ANIMATIONS ==== */
 .fade-in {
