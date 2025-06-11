@@ -18,33 +18,33 @@
 </header>
 
 <div id="slides" class="fade-in">
-  <section class="slide"><img src="assets/about_1.png"></section>
-  <section class="slide"><img src="assets/about_2.png"></section>
-  <section class="slide"><img src="assets/about_3.png"></section>
-  <section class="slide"><img src="assets/about_4.png"></section>
+  <section class="slide"><img src="assets/about_1.png" alt="Slide 1"></section>
+  <section class="slide"><img src="assets/about_2.png" alt="Slide 2"></section>
+  <section class="slide"><img src="assets/about_3.png" alt="Slide 3"></section>
+  <section class="slide"><img src="assets/about_4.png" alt="Slide 4"></section>
 </div>
 
 <footer class="footer fade-in">
+  <div class="footer-left-label">Contact Me:</div>
   <div class="footer-icons">
-    <div class="footer-item">
-      <a href="https://linkedin.com/in/azan-nazar" target="_blank"><img src="images/linkedin.png" alt="LinkedIn"></a>
+    <a href="https://linkedin.com/in/azan-nazar" target="_blank" class="footer-item">
+      <img src="images/linkedin.png" alt="LinkedIn">
       <span>LinkedIn</span>
-    </div>
-    <div class="footer-item">
-      <a href="https://github.com/Zaniboy987" target="_blank"><img src="images/github.png" alt="GitHub"></a>
+    </a>
+    <a href="https://github.com/Zaniboy987" target="_blank" class="footer-item">
+      <img src="images/github.png" alt="GitHub">
       <span>GitHub</span>
-    </div>
-    <div class="footer-item">
-      <a href="mailto:nazarazan13@gmail.com"><img src="images/gmail.png" alt="Gmail"></a>
+    </a>
+    <a href="mailto:nazarazan13@gmail.com" class="footer-item">
+      <img src="images/gmail.png" alt="Gmail">
       <span>Gmail</span>
-    </div>
+    </a>
   </div>
   <div class="footer-trademark">Made by Azan Nazar</div>
 </footer>
 
-
 <script>
-  // fade-in on load
+  // Scroll to top on page load
   window.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.fade-in').forEach(el => {
       el.style.animationDelay = '0.3s';
@@ -52,8 +52,9 @@
     });
     window.scrollTo(0, 0);
   });
-  // header hide/show
-  let lastY = 0, header = document.querySelector('header');
+
+  // Header hide/show on scroll
+  let header = document.querySelector('header');
   window.addEventListener('scroll', () => {
     header.classList.toggle('hidden', window.scrollY > 100);
   });
