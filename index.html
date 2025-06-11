@@ -6,27 +6,6 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-
-<script>
-  const modal = document.getElementById("contactModal");
-
-  function openModal() {
-    modal.style.display = "flex";
-    document.body.classList.add("modal-open");
-  }
-
-  function closeModal() {
-    modal.style.display = "none";
-    document.body.classList.remove("modal-open");
-  }
-
-  window.onclick = function(event) {
-    if (event.target === modal) {
-      closeModal();
-    }
-  };
-</script>
-
 <body>
 
   <!-- Navigation Bar -->
@@ -40,44 +19,24 @@
     </nav>
   </header>
 
-  <!-- Slide Sections (normal sized with fade-ins) -->
-  <section class="content-slide fade-in delay-1">
+  <!-- Slides (regular size with spacing and fade-in) -->
+  <section class="slide fade-in delay-1">
     <img src="assets/about_1.png" alt="Slide 1">
-    <button class="contact-btn" onclick="openModal()">CONTACT ME</button>
   </section>
 
-  <section class="content-slide fade-in delay-2">
+  <section class="slide fade-in delay-2">
     <img src="assets/about_2.png" alt="Slide 2">
   </section>
 
-  <section class="content-slide fade-in delay-3">
+  <section class="slide fade-in delay-3">
     <img src="assets/about_3.png" alt="Slide 3">
   </section>
 
-  <section class="content-slide fade-in delay-4">
+  <section class="slide fade-in delay-4">
     <img src="assets/about_4.png" alt="Slide 4">
   </section>
 
-  <!-- Contact Modal -->
-  <div id="contactModal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn" onclick="closeModal()">&times;</span>
-      <p>Connect with me:</p>
-      <div class="footer-icons-img">
-        <a href="https://www.linkedin.com/in/azan-nazar/" target="_blank">
-          <img src="images/linkedin.png" alt="LinkedIn">
-        </a>
-        <a href="https://github.com/Zaniboy987" target="_blank">
-          <img src="images/github.png" alt="GitHub">
-        </a>
-        <a href="mailto:nazarazan13@gmail.com">
-          <img src="images/gmail.png" alt="Gmail">
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer with image icons -->
+  <!-- Footer with contact icons -->
   <footer class="footer fade-in delay-5">
     <p>Connect with me:</p>
     <div class="footer-icons-img">
@@ -93,9 +52,10 @@
     </div>
   </footer>
 
-  <!-- Fade-in on scroll -->
+  <!-- Scroll-triggered fade-in script -->
   <script>
     const faders = document.querySelectorAll('.fade-in');
+
     const observer = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -103,9 +63,7 @@
           obs.unobserve(entry.target);
         }
       });
-    }, {
-      threshold: 0.15
-    });
+    }, { threshold: 0.1 });
 
     faders.forEach(el => observer.observe(el));
   </script>
