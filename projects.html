@@ -1,60 +1,63 @@
+<!-- projects.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    let currentSlide = 1;
+    const totalSlides = 4;
+    function updateSlide() {
+      document.getElementById("carousel-image").src = `assets/projects_${currentSlide}.png`;
+    }
+    function nextSlide() {
+      currentSlide = currentSlide >= totalSlides ? 1 : currentSlide + 1;
+      updateSlide();
+    }
+    function prevSlide() {
+      currentSlide = currentSlide <= 1 ? totalSlides : currentSlide - 1;
+      updateSlide();
+    }
+  </script>
 </head>
 <body>
+  <header>
+    <div class="header-container">
+      <h1 class="site-title">Personal Website</h1>
+      <nav class="navbar">
+        <div class="navbar-container">
+          <button class="nav-tab" onclick="location.href='index.html'">Home</button>
+          <button class="nav-tab active" onclick="location.href='projects.html'">Projects</button>
+          <button class="nav-tab" onclick="location.href='resume.html'">Resume</button>
+        </div>
+      </nav>
+    </div>
+  </header>
 
-<header>
-  <nav class="navbar">
-    <div class="navbar-container">
-      <button class="nav-tab" onclick="location.href='index.html'">About Me</button>
-      <button class="nav-tab active">Projects</button>
-      <button class="nav-tab" onclick="location.href='resume.html'">Resume</button>
-    </div>
-  </nav>
-</header>
-
-<div class="carousel-container fade-in">
-  <div class="carousel-arrow left" onclick="navigate(-1)">‹</div>
-  <img id="projectImage" src="assets/projects_1.png">
-  <div class="carousel-arrow right" onclick="navigate(1)">›</div>
-</div>
-
-<footer class="footer fade-in">
-  <div class="footer-icons">
-    <div class="footer-item">
-      <a href="https://linkedin.com/in/azan-nazar" target="_blank"><img src="images/linkedin.png"></a>
-      <span>LinkedIn</span>
-    </div>
-    <div class="footer-item">
-      <a href="https://github.com/Zaniboy987" target="_blank"><img src="images/github.png"></a>
-      <span>GitHub</span>
-    </div>
-    <div class="footer-item">
-      <a href="mailto:nazarazan13@gmail.com"><img src="images/gmail.png"></a>
-      <span>Gmail</span>
-    </div>
+  <div class="carousel-container fade-in">
+    <div class="carousel-arrow left" onclick="prevSlide()">❮</div>
+    <img id="carousel-image" src="assets/projects_1.png" alt="Project Image">
+    <div class="carousel-arrow right" onclick="nextSlide()">❯</div>
   </div>
-</footer>
 
-<script>
-  const projects = ['assets/projects_1.png','assets/projects_2.png','assets/projects_3.png'];
-  let idx = 0;
-  function navigate(dir) {
-    idx = (idx + dir + projects.length) % projects.length;
-    document.getElementById('projectImage').src = projects[idx];
-  }
-  window.addEventListener('DOMContentLoaded', () => window.scrollTo(0,0));
-  // header hide behavior
-  let header = document.querySelector('header');
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('hidden', window.scrollY > 100);
-  });
-  header.addEventListener('mouseenter', () => header.classList.remove('hidden'));
-</script>
-
+  <footer class="footer">
+    <div class="footer-icons">
+      <div class="footer-item">
+        <img src="assets/linkedin.png" alt="LinkedIn">
+        <a href="https://www.linkedin.com/in/yourprofile"><span>LinkedIn</span></a>
+      </div>
+      <div class="footer-item">
+        <img src="assets/github.png" alt="GitHub">
+        <a href="https://github.com/yourprofile"><span>GitHub</span></a>
+      </div>
+      <div class="footer-item">
+        <img src="assets/gmail.png" alt="Gmail">
+        <a href="mailto:yourname@gmail.com"><span>Gmail</span></a>
+      </div>
+    </div>
+    <p>&copy; Made by Azan Nazar</p>
+  </footer>
 </body>
 </html>
