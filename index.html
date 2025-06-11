@@ -6,53 +6,58 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
+
+<!-- JavaScript-->
+ <script>
+  const faders = document.querySelectorAll('.fade-in');
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  faders.forEach(el => observer.observe(el));
+</script>
+
+
 <body>
 
   <!-- Navigation Bar -->
-  <div class="hero-top">
-    <header>
-      <nav class="navbar">
-        <div class="navbar-container">
-          <a href="index.html" class="nav-tab active">🏠 About Me</a>
-          <a href="projects.html" class="nav-tab">💻 Projects</a>
-          <a href="resume.html" class="nav-tab">📄 Resume</a>
-        </div>
-      </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero-section fade-in">
-      <img src="images/Photo.jpg" alt="Azan Photo" class="hero-photo slide-up delay-1">
-      <div class="hero-text slide-up delay-2">
-        <p>
-          Recent Binghamton University '25 graduate with an MS (AI Track) and BS in Computer Science with ambitions towards fields within artificial intelligence, machine learning, software engineering, and tech consulting. I'm eager to showcase my academic and project experience from these fields in crafting innovative solutions for practical and pertinent challenges.
-        </p>
+  <header>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="index.html" class="nav-tab active">🏠 About Me</a>
+        <a href="projects.html" class="nav-tab">💻 Projects</a>
+        <a href="resume.html" class="nav-tab">📄 Resume</a>
       </div>
-    </section>
-  </div>
+    </nav>
+  </header>
 
-  <!-- Skillset Section -->
-  <section class="fade-in skillset-section">
-    <img src="images/Bing.jpg" alt="Binghamton" class="section-img slide-up delay-1">
-    <div class="section-text slide-up delay-2">
-      <p>
-        Throughout high school and college, I've honed in my knowledge of computer science, expertise in coding, understanding of core software engineering principles, pragmatic application of machine learning and artificial intelligence, and advancing smart health outcomes within a research purview. Nearing 8 years of experience, I've become adept in languages such as Python, C, and Java.
-      </p>
-    </div>
+  <!-- Fullscreen Slides -->
+  <section class="slide fade-in delay-1">
+    <img src="assets/about_1.png" alt="Slide 1">
   </section>
 
-  <!-- Experience Section -->
-  <section class="fade-in experience-section">
-    <img src="images/Gesture.png" alt="Gesture Research" class="section-img slide-up delay-1">
-    <div class="section-text slide-up delay-2">
-      <p>
-        On my computer science voyage, my most impactful mission has been co-authoring a scientific survey culminating and analyzing the advancements of gesture recognition technology in recent years. With contributions targeted for CHI 2025 in Yokohama, Japan, this work highlights my exploration of gesture classification, sequence modeling, and generative motion synthesis.
-      </p>
-    </div>
+  <section class="slide fade-in delay-2">
+    <img src="assets/about_2.png" alt="Slide 2">
+  </section>
+
+  <section class="slide fade-in delay-3">
+    <img src="assets/about_3.png" alt="Slide 3">
+  </section>
+
+  <section class="slide fade-in delay-4">
+    <img src="assets/about_4.png" alt="Slide 4">
   </section>
 
   <!-- Footer with image icons -->
-  <footer class="footer fade-in slide-up delay-2">
+  <footer class="footer fade-in delay-5">
     <p>Connect with me:</p>
     <div class="footer-icons-img">
       <a href="https://www.linkedin.com/in/azan-nazar/" target="_blank" title="LinkedIn">
