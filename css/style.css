@@ -37,7 +37,7 @@ header.hidden { transform: translateY(-100%); }
 
 /* ==== SLIDES ==== */
 .slide {
-  width: 1000px;
+  width: 950px;
   max-width: 95%;
   margin: 100px auto; /* so header doesn't cover */
 }
