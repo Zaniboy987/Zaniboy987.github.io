@@ -10,7 +10,7 @@ body {
 }
 
 html {
-  scroll-behavior: auto; /* scroll to top on refresh */
+  scroll-behavior: auto;
 }
 
 /* ==== HEADER (AUTO-HIDE) ==== */
@@ -54,7 +54,7 @@ header.hidden {
   text-decoration: underline 2px solid #87CEFA;
 }
 
-/* ==== SLIDES ==== */
+/* ==== SLIDES (for About Me page) ==== */
 .slide {
   width: 1000px;
   max-width: 95%;
@@ -69,47 +69,45 @@ header.hidden {
 
 /* ==== PROJECTS CAROUSEL ==== */
 .carousel-container {
-  position: relative;
   width: 900px;
   max-width: 95%;
   margin: 120px auto 60px;
   text-align: center;
 }
-.carousel-container img {
+
+.carousel-image {
   width: 100%;
   max-height: 500px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
 }
-.carousel-arrow {
-  position: absolute;
-  top: 50%;
-  font-size: 3rem;
+.carousel-image.visible {
+  opacity: 1;
+}
+
+.carousel-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 24px;
+}
+
+.carousel-btn {
+  background: rgba(255, 255, 255, 0.9);
   color: #000;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
   width: 60px;
-  height: 60px;
-  line-height: 60px;
-  text-align: center;
+  height: 44px;
   cursor: pointer;
-  transform: translateY(-50%);
-  user-select: none;
-  z-index: 1;
+  transition: background 0.3s ease;
 }
-.carousel-arrow.left {
-  left: -80px;
-}
-.carousel-arrow.right {
-  right: -80px;
-}
-@media screen and (max-width: 768px) {
-  .carousel-arrow.left {
-    left: 10px;
-  }
-  .carousel-arrow.right {
-    right: 10px;
-  }
+.carousel-btn:hover {
+  background: #e0e0e0;
 }
 
 /* ==== RESUME BUTTONS ==== */
