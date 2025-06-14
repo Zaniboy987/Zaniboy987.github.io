@@ -55,18 +55,12 @@
 
   function navigate(dir) {
     const img = document.getElementById('projectImage');
-    img.classList.remove('visible');
-    setTimeout(() => {
-      idx = (idx + dir + projects.length) % projects.length;
-      img.src = projects[idx];
-      img.classList.add('visible');
-    }, 100);
+    idx = (idx + dir + projects.length) % projects.length;
+    img.src = projects[idx];
   }
 
   window.addEventListener('DOMContentLoaded', () => {
     window.scrollTo(0, 0);
-    document.getElementById('projectImage').classList.add('visible');
-
     const header = document.querySelector('header');
     window.addEventListener('scroll', () => {
       header.classList.toggle('hidden', window.scrollY > 100);

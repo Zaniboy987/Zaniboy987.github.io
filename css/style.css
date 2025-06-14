@@ -54,7 +54,7 @@ header.hidden {
   text-decoration: underline 2px solid #87CEFA;
 }
 
-/* ==== SLIDES (for About Me page) ==== */
+/* ==== SLIDES (About Page) ==== */
 .slide {
   width: 1000px;
   max-width: 95%;
@@ -80,11 +80,6 @@ header.hidden {
   max-height: 500px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  opacity: 0;
-  transition: opacity 0.5s ease-in;
-}
-.carousel-image.visible {
-  opacity: 1;
 }
 
 .carousel-buttons {
@@ -95,14 +90,14 @@ header.hidden {
 }
 
 .carousel-btn {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   color: #000;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-weight: bold;
   border: none;
   border-radius: 12px;
-  width: 60px;
-  height: 44px;
+  width: 80px;
+  height: 60px;
   cursor: pointer;
   transition: background 0.3s ease;
 }
